@@ -1,0 +1,211 @@
+<!-- Edit-->
+<div class="modal fade" id="edit_<?php echo $row['w_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">View / Edit Details</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                
+                </button>
+            </div>
+            <div class="modal-body">
+            <form action="../actions/edit-order.php" method="post">
+                    <div class="row form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label" style="position:relative; top:7px;">Work Order ID:</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="wid" value="<?php echo $row['w_id']; ?> " readonly>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label" style="position:relative; top:7px;">Asset ID:</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="waid" value="<?php echo $row['w_name']; ?>" required>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label" style="position:relative; top:7px;">Asset Name:</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="wasset" value="<?php echo $row['w_asset']; ?>" required>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label" style="position:relative; top:7px;">Priority:</label>
+                        </div>
+                        <div class="col-sm-8" >
+                        <div class="custom-select" style="width:100%;">
+                        <select name="wprio" id="wprio" value="<?php echo $row['w_prio']; ?>">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                            <option value="Last">Last</option>
+                        </select>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                  
+                    <div class="col-sm-4">
+                            <label class="control-label" style="position:relative; top:7px;">Status:</label>
+                        </div>
+                        <div class="col-sm-8" >
+                        <div class="custom-select" style="width:100%;">
+                    
+                            <select name="wstatus" id="wstatus" value="<?php echo $row['w_status']; ?>">
+                                <option value="Planning">Planning</option>
+                                <option value="Progress">Progress</option>
+                                <option value="Nothing">Nothing</option>
+                                <option value="Dropped">Dropped</option>
+                            </select>
+                    
+                        </div>
+                    </div> 
+                    </div>
+                    <div class="row form-group">
+                  
+                    <div class="col-sm-4">
+                            <label class="control-label" style="position:relative; top:7px;">Assigned:</label>
+                        </div>
+                        <div class="col-sm-8" >
+                        <div class="custom-select" style="width:100%;">
+                    
+                        <select name="wassigned" id="wassigned" value="<?php echo $row['w_assgined']; ?>">
+                            <option value="Charles">Charles</option>
+                            <option value="Francis">Francis</option>
+                         
+                        </select>
+                    
+                        </div>
+                    </div> 
+                    </div>
+                    <div class="row form-group">
+                  
+                  <div class="col-sm-4">
+                          <label class="control-label" style="position:relative; top:7px;">Date Created:</label>
+                      </div>
+                      <div class="col-sm-8" >
+                      <div class="custom-select" style="width:100%;">
+                  
+                      <input type="date" id="wdate" name="wdate" value="<?php echo $row['w_created']; ?>">
+                        
+                       
+                      </select>
+                  
+                      </div>
+                  </div> 
+                  </div>
+                  <div class="row form-group">
+                  
+                  <div class="col-sm-4">
+                          <label class="control-label" style="position:relative; top:7px;">Due Date:</label>
+                      </div>
+                      <div class="col-sm-8" >
+                      <div class="custom-select" style="width:100%;">
+                  
+                      <input type="date" id="wdue" name="wdue" value="<?php echo $row['w_due']; ?>">
+                        
+                       
+                      </select>
+                  
+                      </div>
+                        </div> 
+                     </div>
+                     <div class="row form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label" style="position:relative; top:7px;">Cost:</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="wcost" value="<?php echo $row['w_cost']; ?> " required>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label" style="position:relative; top:7px;">Description:</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="wcost" value="<?php echo $row['w_desc']; ?> " required>
+                        </div>
+                    </div>
+             
+                </div>
+            
+            <!-- End of Modal Body -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
+                <!-- <a class="btn btn-primary" href="../includes/logout.inc.php">Logout</a> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- View Modal -->
+<div class="modal fade" id="view_" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Staff Details</h4>
+            </div>
+            <form action="../actions/view-staff.php" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" id="sname" name="sname" placeholder="Name" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" id="semail" name="semail" placeholder="Email" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Job</label>
+                        <input class="form-control" id="sjob" name="sjob" placeholder="Job" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Hired</label>
+                        <input class="form-control" id="sdate" name="sdate" placeholder="Date Hired" readonly>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Delete -->
+<div class="modal fade" id="delete_<?php echo $row['s_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Staff</h4></center>
+            </div>
+            <form action="../actions/delete-staff.php" method="post">
+            <div class="modal-body">	
+            	<p class="text-center">Are you sure you want to Delete</p>
+				<h2 class="text-center"><?php echo $row['s_name']; ?></h2>
+                <input type="hidden" name="aid" value="<?php echo $row['s_id'];?>">
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                 <button type="submit" name="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes
+</form>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
